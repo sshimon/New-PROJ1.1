@@ -1,0 +1,37 @@
+
+public class Student extends Person {
+	static int x;
+	int sum = 0;
+	int numcourse;
+	String[] courses = new String[10];
+	int[] grade = new int[10];
+
+	public Student(String name, String addres, int x) {
+		super (name, addres);
+		this.x = x;
+
+	};
+
+	public void addCoursesGrade(String Course, int Grade) {
+
+		this.courses[x] = Course;
+		this.grade[x] = Grade;
+		x = x + 1;
+		sum = sum + Grade;
+	}
+
+	public void printGrade() {
+		int x = 0;
+		while (courses[x] != null) {
+			System.out.println("For the course " + courses[x] + " your grade is :" + grade[x]);
+			x++;
+		}
+
+	}
+
+	public double getAvgGrade(int sum) {
+	 double avg = (double)sum/x;
+	 return avg;
+	}
+
+}
